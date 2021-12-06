@@ -1,9 +1,7 @@
 import React from "react";
-import { View, StyleSheet, Image, Text, Dimensions } from "react-native";
+import { View, StyleSheet, Image, Text } from "react-native";
 
 import theme from "../../theme";
-
-const width = Dimensions.get("window").width; //full width
 
 const styles = StyleSheet.create({
   flexContainer: {
@@ -16,7 +14,6 @@ const styles = StyleSheet.create({
   flexContainerA: {
     flexDirection: "row",
     alignItems: "stretch",
-    width: width,
   },
   flexContainerB: {
     flexDirection: "row",
@@ -49,7 +46,8 @@ const RepositoryItem = ({ item }) => {
             style={styles.tinyLogo}
             source={{ uri: item.ownerAvatarUrl }}
           />
-          <View style={{ margin: 8, width: width - 88 }}>
+          <View style={{ margin: 8, flexGrow: 1 }}>
+            {/* width: width - 88  */}
             <View
               style={{
                 flexDirection: "row",
