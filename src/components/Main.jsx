@@ -4,6 +4,7 @@ import { Route, Switch, Redirect } from "react-router-native";
 
 import AppBar from "./AppBar/AppBar";
 import RepositoryList from "./Repository/RepositoryList";
+import SignIn from "./SignIn";
 
 const styles = StyleSheet.create({
   container: {
@@ -15,15 +16,20 @@ const styles = StyleSheet.create({
 
 const Main = () => {
   return (
-    <View style={styles.container}>
-      <AppBar />
-      <Switch>
-        <Route path="/" exact>
-          <RepositoryList />
-        </Route>
-        <Redirect to="/" />
-      </Switch>
-    </View>
+    <>
+      <View style={styles.container}>
+        <AppBar />
+        <Switch>
+          <Route exact path="/">
+            <RepositoryList />
+          </Route>
+          <Route exact path="/signin">
+            <SignIn />
+          </Route>
+          <Redirect to="/" />
+        </Switch>
+      </View>
+    </>
   );
 };
 
