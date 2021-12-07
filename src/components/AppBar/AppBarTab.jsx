@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, Pressable, Text, ScrollView } from "react-native";
+import { StyleSheet, Pressable, Text } from "react-native";
 import { Link } from "react-router-native";
 
 const styles = StyleSheet.create({
@@ -10,15 +10,11 @@ const styles = StyleSheet.create({
 
 const AppBarTab = ({ tabName, route }) => {
   return (
-    <>
-      <ScrollView horizontal>
-        <Link to={route}>
-          <Pressable style={styles.tab}>
-            <Text style={{ color: "#fff", fontWeight: "bold" }}>{tabName}</Text>
-          </Pressable>
-        </Link>
-      </ScrollView>
-    </>
+    <Link to={route}>
+      <Pressable style={styles.tab}>
+        <Text style={{ color: "#fff", fontWeight: "bold" }}>{tabName}</Text>
+      </Pressable>
+    </Link>
   );
 };
 
